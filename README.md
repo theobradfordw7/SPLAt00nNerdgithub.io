@@ -1,1 +1,1 @@
-Just trying to acces a search engine and make a somewhat functional browser
+Just trying to access a search engine and make a somewhat functional browser
