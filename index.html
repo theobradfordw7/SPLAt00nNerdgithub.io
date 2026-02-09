@@ -11,4 +11,25 @@
     <p>This site is hosted directly on GitHub Pages without iframes.</p>
     <script src="script.js"></script>
 </body>
+<!-- Container to display the data -->
+<div id="data-container">Loading data...</div>
+
+<script>
+async function pullData() {
+    const url = 'https://api.example.com/data'; // Replace with your URL
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const data = await response.json(); // Use .text() if pulling raw text/HTML
+        document.getElementById('data-container').innerHTML = `Fetched Data: ${data.message}`;
+    } catch (error) {
+        document.getElementById('data-container').innerHTML = 'Error: ' + error.message;
+    }
+}
+
+// Run the function when the page loads
+pullData();
+</script>
+
 </html>
